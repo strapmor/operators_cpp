@@ -93,11 +93,117 @@ void task3() {
     cout << endl;
 }
 
+void task4() {
+    int x;
+    cout << "Введите номер достоинства карты: ";
+    cin >> x;
+
+    switch (x) {
+    case 6:
+        cout << "Это шестёрка";
+        break;
+    case 7:
+        cout << "Это семёрка";
+        break;
+    case 8:
+        cout << "Это восьмерка";
+        break;
+    case 9:
+        cout << "Это девятка";
+        break;
+    case 10:
+        cout << "Это десятка";
+        break;
+    case 11:
+        cout << "Это валет";
+        break;
+    case 12:
+        cout << "Это дама";
+        break;
+    case 13:
+        cout << "Это король";
+        break;
+    case 14:
+        cout << "Это туз";
+        break;
+    default:
+        cout << "Такой карты нет";
+        break;
+    }
+    cout << endl;
+}
+
+void task5() {
+    int x;
+    cout << "Введите номер масти: ";
+    cin >> x;
+    int y;
+    cout << "Введите номер достоинства карты: ";
+    cin >> y;
+    string suit, value;
+
+    switch (x) {
+    case 1:
+        suit = "пик";
+        break;
+    case 2:
+        suit = "треф";
+        break;
+    case 3:
+        suit = "бубен";
+        break;
+    case 4:
+        suit = "черв";
+        break;
+    default:
+        return;
+    }
+    switch (y) {
+    case 6:
+        value = "шестёрка";
+        break;
+    case 7:
+        value = "семёрка";
+        break;
+    case 8:
+        value = "восьмерка";
+        break;
+    case 9:
+        value = "девятка";
+        break;
+    case 10:
+        value = "десятка";
+        break;
+    case 11:
+        value = "валет";
+        break;
+    case 12:
+        value = "дама";
+        break;
+    case 13:
+        value = "король";
+        break;
+    case 14:
+        value = "туз";
+        break;
+    default:
+        return;
+    }
+    
+    cout << "Это " << value << " " << suit << endl;
+}
+
+void task6() {
+
+}
+
 int main()
 {
     setlocale(LC_ALL, "rus");
     //task1and2();
-    task3();
+    //task3();
+    //task4();
+    task5();
 
 
     system("pause");
