@@ -68,11 +68,36 @@ void task1and2() {
     cout << "До конца месяца осталось: " << days_count - day << endl;
 }
 
+void task3() {
+    int x;
+    cout << "Введите номер масти: ";
+    cin >> x;
+
+    switch (x) {
+    case 1:
+        cout << "Это пики";
+        break;
+    case 2:
+        cout << "Это трефы";
+        break;
+    case 3:
+        cout << "Это бубны";
+        break;
+    case 4:
+        cout << "Это червы";
+        break;
+    default:
+        cout << "Такой масти нет";
+        break;
+    }
+    cout << endl;
+}
 
 int main()
 {
     setlocale(LC_ALL, "rus");
-    task1and2();
+    //task1and2();
+    task3();
 
 
     system("pause");
