@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <Windows.h>
 using namespace std;
 
 void task1and2() {
@@ -194,16 +195,108 @@ void task5() {
 }
 
 void task6() {
+    cout << "Введите число месяцев с 1 января 1990 года: ";
+    int count, x;
+    cin >> count;
+    x = (count % 12) + 1;
+    string month;
+    switch (x) {
+    case 1:
+        month = "Январь";
+        break;
+    case 2:
+        month = "Февраль";
+        break;
+    case 3:
+        month = "Март";
+        break;
+    case 4:
+        month = "Апрель";
+        break;
+    case 5:
+        month = "Май";
+        break;
+    case 6:
+        month = "Июнь";
+        break;
+    case 7:
+        month = "Июль";
+        break;
+    case 8:
+        month = "Август";
+        break;
+    case 9:
+        month = "Сентябрь";
+        break;
+    case 10:
+        month = "Октябрь";
+        break;
+    case 11:
+        month = "Ноябрь";
+        break;
+    case 12:
+        month = "Декабрь";
+        break;
+    }
 
+    cout << "Сейчас " << month << endl;
+}
+
+void task7() {
+    cout << "Расписание\nВрач:\tШпак А. С.\nВведите день недели (Понедельник, ПН и т.п.): ";
+
+    while (true) {
+        string day;
+        cin >> day;
+
+        //Преобразование строки в нижний регистр
+        for (int i = 0; day[i] != '\0'; i++) {
+            day[i] = tolower(day[i]);
+        }
+
+
+        if (day == "понедельник" || day == "пн")
+            cout << "Расписание на понедельник:\t8:30-16:30\n\t12:00-12:30 - перерыв";
+
+        else if (day == "вторник" || day == "вт")
+            cout << "Расписание на вторник:\t8:30-16:30\n\t12:00-12:30 - перерыв";
+
+        else if (day == "среда" || day == "ср")
+            cout << "Расписание на среду:\t8:30-16:30\n\t12:00-12:30 - перерыв";
+
+        else if (day == "четверг" || day == "чт")
+            cout << "Расписание на четверг:\t8:30-16:30\n\t12:00-12:30 - перерыв";
+
+        else if (day == "пятница" || day == "пт")
+            cout << "Расписание на пятницу:\t8:30-16:30\n\t12:00-12:30 - перерыв";
+
+        else if (day == "суббота" || day == "сб")
+            cout << "Расписание на субботу:\tВЫХОДНОЙ";
+
+        else if (day == "воскресенье" || day == "вс")
+            cout << "Расписание на воскресенье:\tВЫХОДНОЙ";
+
+        else {
+            cout << "Введённый месяц не найден\nВозможно опечатка, попробуйте снова: ";
+            continue;
+        }
+        cout << endl;
+        break;
+    }
 }
 
 int main()
 {
+    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
     setlocale(LC_ALL, "rus");
+
     //task1and2();
     //task3();
     //task4();
-    task5();
+    //task5();
+    //task6();
+    task7();
 
 
     system("pause");
