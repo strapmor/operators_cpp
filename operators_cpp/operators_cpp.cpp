@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <Windows.h>
+#include <ctime>
 using namespace std;
 
 void task1and2() {
@@ -384,14 +385,157 @@ void task10() {
         cout << "Нет такого года" << endl;
         break;
     }
+}
 
+void task11() {
+    int age;
+    cout << "Введите возраст: ";
+    cin >> age;
+
+    if (age < 0)
+        cout << "Отрицательного возраста не бывает" << endl;
+    else if (age == 0 || age == 1)
+        cout << "Младенец" << endl;
+    else if (age > 1 && age <= 11)
+        cout << "Ребёнок" << endl;
+    else if (age >= 12 && age <= 15)
+        cout << "Подросток" << endl;
+    else if (age >= 16 && age <= 25)
+        cout << "Юноша" << endl;
+    else if (age >= 26 && age <= 70)
+        cout << "Мужчина" << endl;
+    else if (age >= 70)
+        cout << "Пожилой человек" << endl;
+}
+
+void task12() {
+    srand(time(NULL));
+    int rnd = rand() % 5;
+    string men[6] = {"Иван", "Евгений", "Сергей", "Дмитрий", "Артём", "Григорий"};
+    string women[6] = { "Анна", "Яна", "Екатерина", "Валерия", "Анастасия", "Алиса"};
+
+    cout << "Какой пол? (м/ж): ";
+    char gender;
+    cin >> gender;
+
+    switch (gender) {
+    case 'м':
+        cout << "Возможное имя пола: " << men[rnd] << endl;
+        break;
+    case 'ж':
+        cout << "Возможное имя пола: " << women[rnd] << endl;
+        break;
+    default:
+        cout << "Такого пола нет" << endl;
+        break;
+    }
+}
+
+void task13() {
+    cout << "Выберите тип транспорта (а - автомобиль, в - велосипед, м - мотоцикл, с - самолёт, п - поезд): ";
+    char vehicle;
+    cin >> vehicle;
+
+    switch (vehicle) {
+    case 'а':
+        cout << "Максимальная скорость: 110км/ч" << endl;
+        break;
+    case 'в':
+        cout << "Максимальная скорость: 110км/ч" << endl;
+        break;
+    case 'м':
+        cout << "Максимальная скорость: 110км/ч" << endl;
+        break;
+    case 'с':
+        cout << "Максимальная скорость: 600км/ч" << endl;
+        break;
+    case 'п':
+        cout << "Максимальная скорость: 200км/ч" << endl;
+        break;
+
+    default:
+        cout << "Такого транспорта нет" << endl;
+        break;
+    }
+}
+
+void task14() {
+    cout << "Введите номер телевизионного канала (от 1 до 5): ";
+    int channel;
+    cin >> channel;
+
+    switch (channel) {
+    case 1:
+        cout << "Популярные программы канала:\nПоле чудес\nЧто? Где? Когда?"<<endl;
+        break;
+    case 2:
+        cout << "Популярные программы канала:\nКухня\nПусть говорят" << endl;
+        break;
+    case 3:
+        cout << "Популярные программы канала:\nДавай поженимся\nМужское-женское" << endl;
+        break;
+    case 4:
+        cout << "Популярные программы канала:\nКривой кефир\nПроСТО кухня" << endl;
+        break;
+    case 5:
+        cout << "Популярные программы канала:\nComedy club\nУральские пельмени" << endl;
+        break;
+    }
+}
+
+void give_op(string s, string p) {
+    while (true) {
+        char op;
+        cout << "Что вы хотите вывести? (s - площадь, p - периметр):";
+        cin >> op;
+    
+        switch (op) {
+        case 's':
+            cout << "s = " << s;
+            break;
+        case 'p':
+            cout << "p = " << p;
+            break;
+        default:
+            cout << "Такого параметра нет, попробуйте снова: " << endl;
+            break;
+        }
+    }
+}
+
+void task15() {
+    char fig;
+    string s, p;
+    cout << "Введите фигуру (к - круг, п - прямоугольник, т - треугольник): ";
+    while (true) {
+        cin >> fig;
+
+        switch (fig) {
+        case 'к':
+            s = "πr^2";
+            p = "2πr";
+            break;
+        case 'п':
+            s = "ab";
+            p = "a*2+b*2";
+            break;
+        case 'т':
+            s = "1/2ab";
+            p = "abc";
+            break;
+        default:
+            cout << "Такой фигуры нет, попробуйте снова: ";
+            continue;
+        }
+    }
+    give_op(s, p);
 }
 
 int main()
 {
     SetConsoleOutputCP(1251);
     SetConsoleCP(1251);
-    //setlocale(LC_ALL, "rus");
+    setlocale(LC_ALL, "rus");
 
     //task1and2();
     //task3();
@@ -401,7 +545,12 @@ int main()
     //task7();
     //task8();
     //task9();
-    task10();
+    //task10();
+    //task11();
+    //task12();
+    //task13();
+    //task14();
+    task15();
 
 
     system("pause");
