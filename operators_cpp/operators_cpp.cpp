@@ -284,6 +284,109 @@ void task7() {
     }
 }
 
+void task8() {
+    int x;
+    cout << "Введите количество набранных баллов: ";
+    cin >> x;
+
+    if (x >= 90 && x <= 100) {
+        cout << "Оценка: отлично";
+    }
+    else if (x >= 70 && x <= 89)
+        cout << "Оценка: хорошо";
+    else if (x >= 50 && x <= 69)
+        cout << "Оценка: удовлетворительно";
+    else if(x >= 0 && x <= 49)
+        cout << "Оценка: неудовлетворительно";
+    else
+        cout << "Ты, по-моему, перепутал";
+    cout << endl;
+}
+
+void task9() {
+    double a, b;
+    char op;
+    cout << "Введите первое число: ";
+    cin >> a;
+    cout << "Введите второе число: ";
+    cin >> b;
+    cout << "Введите операцию (+, -, *, /): ";
+    cin >> op;
+
+    switch (op) {
+    case '+':
+        cout << a + b << endl;
+        break;
+    case '-':
+        cout << a - b << endl;
+        break;
+    case '/':
+        cout << a / b << endl;
+        break;
+    case '*':
+        cout << a * b << endl;
+        break;
+    default:
+        cout << "Нет такой операции" << endl;
+        break;
+    }
+}
+
+void task10() {
+    int year;
+    cout << "Введите год: ";
+    cin >> year;
+
+    if (year >= 4)
+        year = (year - 4) % 12;
+    else
+        year = (year + 8) % -12;
+
+
+    switch (year) {
+    case 0:
+        cout << "Это год крысы" << endl;
+        break;
+    case 1:
+        cout << "Это год быка" << endl;
+        break;
+    case 2:
+        cout << "Это год тигра" << endl;
+        break;
+    case 3:
+        cout << "Это год кролика" << endl;
+        break;
+    case 4:
+        cout << "Это год дракона" << endl;
+        break;
+    case 5:
+        cout << "Это год змеи" << endl;
+        break;
+    case 6:
+        cout << "Это год лошади" << endl;
+        break;
+    case 7:
+        cout << "Это год овцы" << endl;
+        break;
+    case 8:
+        cout << "Это год обезьяны" << endl;
+        break;
+    case 9:
+        cout << "Это год петуха" << endl;
+        break;
+    case 10:
+        cout << "Это год собаки" << endl;
+        break;
+    case 11:
+        cout << "Это год свиньи" << endl;
+        break;
+    default:
+        cout << "Нет такого года" << endl;
+        break;
+    }
+
+}
+
 int main()
 {
     SetConsoleOutputCP(1251);
@@ -295,7 +398,10 @@ int main()
     //task4();
     //task5();
     //task6();
-    task7();
+    //task7();
+    //task8();
+    //task9();
+    task10();
 
 
     system("pause");
