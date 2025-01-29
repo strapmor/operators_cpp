@@ -484,17 +484,20 @@ void task14() {
 }
 
 void give_op(string s, string p) {
-    while (true) {
+    bool selected = false;
+    cout << "Что вы хотите вывести? (s - площадь, p - периметр): ";
+    while (!selected) {
         char op;
-        cout << "Что вы хотите вывести? (s - площадь, p - периметр):";
         cin >> op;
     
         switch (op) {
         case 's':
-            cout << "s = " << s;
+            cout << "s = " << s << endl;
+            selected = true;
             break;
         case 'p':
-            cout << "p = " << p;
+            cout << "p = " << p << endl;
+            selected = true;
             break;
         default:
             cout << "Такого параметра нет, попробуйте снова: " << endl;
@@ -507,21 +510,25 @@ void task15() {
     char fig;
     string s, p;
     cout << "Введите фигуру (к - круг, п - прямоугольник, т - треугольник): ";
-    while (true) {
+    bool selected = false;
+    while (!selected) {
         cin >> fig;
-
+        
         switch (fig) {
         case 'к':
             s = "πr^2";
             p = "2πr";
+            selected = true;
             break;
         case 'п':
             s = "ab";
             p = "a*2+b*2";
+            selected = true;
             break;
         case 'т':
             s = "1/2ab";
             p = "abc";
+            selected = true;
             break;
         default:
             cout << "Такой фигуры нет, попробуйте снова: ";
